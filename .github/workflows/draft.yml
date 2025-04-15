@@ -44,3 +44,13 @@ jobs:
         with:
           name: RunReports
           path: testResults 
+          
+      # Publish report on gh pages
+      - name: Publish Github Pages
+        if: ${{ always() }}
+        uses: peaceiris/actions-gh-pages@v3.8.0
+        with:
+          github_token: ${{ secrets.PAT_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: results-history
+          keep_files: true 
