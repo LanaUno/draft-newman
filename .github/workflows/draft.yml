@@ -54,21 +54,21 @@ jobs:
       #     results_history: results-history
 
       # Publish report on gh pages
-      - name: Publish Github Pages
-        if: ${{ always() }}
-        uses: peaceiris/actions-gh-pages@v3.8.0
-        with:
-          github_token: ${{ secrets.PAT_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: results-history
-          keep_files: true 
+      # - name: Publish Github Pages
+      #   if: ${{ always() }}
+      #   uses: peaceiris/actions-gh-pages@v3.8.0
+      #   with:
+      #     github_token: ${{ secrets.PAT_TOKEN }}
+      #     publish_branch: gh-pages
+      #     publish_dir: results-history
+      #     keep_files: true 
 
-  # build-and-deploy:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #   - uses: actions/checkout@v2
-  #   - name: Deploy to GitHub Pages
-  #     uses: peaceiris/actions-gh-pages@v3
-  #     with:
-  #       github_token: ${{ secrets.PAT_TOKEN }}
-  #       publish_dir: testResults
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.PAT_TOKEN }}
+        publish_dir: downloads
