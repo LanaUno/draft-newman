@@ -45,13 +45,13 @@ jobs:
           name: RunReports
           path: testResults 
 
-      - name: Test marketplace action
-        uses: PavanMudigonda/html-reporter-github-pages@v1.0
-        id: test-report
-        with:
-          test_results: testResults
-          gh_pages: gh-pages
-          results_history: results-history
+      # - name: Test marketplace action
+      #   uses: PavanMudigonda/html-reporter-github-pages@v1.0
+      #   id: test-report
+      #   with:
+      #     test_results: testResults
+      #     gh_pages: gh-pages
+      #     results_history: results-history
 
       # Publish report on gh pages
       - name: Publish Github Pages
